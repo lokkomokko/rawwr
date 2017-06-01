@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+
+    <title>Rawr</title>
+    <script src="js/config.js"></script>
+  </head>
+  <body>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <!--<script src="js/jQueryEmoji.min.js"></script>-->
+  <!--<link rel="stylesheet" href="css/emojionearea.css">-->
+
+  <!--<script type="text/javascript" src="js/emojionearea.min.js"></script>-->
+  <!--<script src="//cdn.jsdelivr.net/emojione/1.5.2/lib/js/emojione.min.js"></script>-->
+  <!--<link rel="stylesheet" href="//cdn.jsdelivr.net/emojione/1.5.2/assets/css/emojione.min.css" />-->
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/emoji.css" rel="stylesheet">
+  <script src="js/config.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/jquery.emojiarea.js"></script>
+  <script src="js/emoji-picker.js"></script>
+  <script src="https://cdn.jsdelivr.net/emojione/3.0.3/lib/js/emojione.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/emojione/3.0.3/extras/css/emojione.min.css"/>
+
+  <div id="root"></div>
+
+
+  </body>
+  <script>
+      $(document).ready(function() {
+          $(function() {
+              // Initializes and creates emoji set from sprite sheet
+              window.emojiPicker = new EmojiPicker({
+                  emojiable_selector: '[data-emojiable=true]',
+                  assetsPath: '../lib/img/',
+                  popupButtonClasses: 'fa fa-smile-o'
+              });
+              // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
+              // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
+              // It can be called as many times as necessary; previously converted input fields will not be converted again
+              window.emojiPicker.discover();
+          });
+//          setTimeout(function () {
+//              document.getElementById("old").innerHTML = emojione.unicodeToImage(document.getElementById("old").innerHTML);
+//          }, 1000)
+      });
+
+  </script>
+</html>
